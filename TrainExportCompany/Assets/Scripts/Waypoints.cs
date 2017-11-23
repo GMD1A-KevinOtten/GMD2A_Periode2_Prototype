@@ -5,7 +5,7 @@ using UnityEngine;
 public class Waypoints : MonoBehaviour {
     public List<GameObject> wp = new List<GameObject>();
     private bool inRange;
-    private int index;
+    public int index;
 
     public float speed;
     public Transform target;
@@ -31,15 +31,17 @@ public class Waypoints : MonoBehaviour {
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, speed * Time.deltaTime);
             if (index < wp.Count)
             {
-                if (transform.position == wp[index].transform.position)
+                if (transform.position == wp[index].transform.position && index < wp.Count)
                 {
                     index++;
                 }
             }
-            if (index == wp.Count)
-            {
-                index = 0;
-            }
+
+            Debug.Log(index);
+            //if (index == wp.Count)
+            //{
+            //    //index = 0;
+            //}
         }
     }
 }
