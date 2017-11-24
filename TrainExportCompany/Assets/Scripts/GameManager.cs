@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         if(gm == null)
         {
             gm = this;
@@ -30,6 +31,6 @@ public class GameManager : MonoBehaviour {
 
     public static void SceneChance(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneIndex,LoadSceneMode.Single);
     }
 }
