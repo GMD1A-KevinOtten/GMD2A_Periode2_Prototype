@@ -4,13 +4,38 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour {
 
-    public void Quit()
+    public enum UIState
     {
-        GameManager.QuitGame();
+        Train,
+        Station,
+        PauseMenu
     }
 
-    public void Start()
+    public UIState uiState;
+
+    void Update()
     {
-        GameManager.SceneChance(1);
+        
     }
+
+    public void ChangeUIState()
+    {
+        if(Input.GetButtonDown("Escape"))
+        {
+            if (uiState == UIState.Train)
+            {
+                uiState = UIState.PauseMenu;
+            }
+            else if (uiState == UIState.Station)
+            {
+                uiState = UIState.Train;
+            }
+            else if (uiState == UIState.PauseMenu)
+            {
+                uiState = UIState.Train;
+            }
+        }
+    }
+
+
 }

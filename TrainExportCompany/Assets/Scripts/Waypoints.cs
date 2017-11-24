@@ -23,25 +23,29 @@ public class Waypoints : MonoBehaviour {
     {
         if (inRange == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, wp[index].transform.position, speed * Time.deltaTime);
-            target = wp[index].transform;
-            Vector3 targetDir = target.position - transform.position;
-            Vector3 lookDir = Vector3.RotateTowards(transform.forward, targetDir, speed, 0.0F);
-            Quaternion rot = Quaternion.LookRotation(lookDir);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rot, speed * Time.deltaTime);
-            if (index < wp.Count)
+            if(wp[index] != null)
             {
-                if (transform.position == wp[index].transform.position && index < wp.Count)
+                transform.position = Vector3.MoveTowards(transform.position, wp[index].transform.position, speed * Time.deltaTime);
+                target = wp[index].transform;
+
+            }
+
+            if(target != null)
+            {
+                Vector3 targetDir = target.position - transform.position;
+                Vector3 lookDir = Vector3.RotateTowards(transform.forward, targetDir, speed, 0.0F);
+                Quaternion rot = Quaternion.LookRotation(lookDir);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rot, speed * Time.deltaTime);
+
+            }
+            if (index < wp.Count -1)
+            {
+                if (transform.position == wp[index].transform.position)
                 {
+                    print("test1");
                     index++;
                 }
             }
-
-            Debug.Log(index);
-            //if (index == wp.Count)
-            //{
-            //    //index = 0;
-            //}
         }
     }
 }

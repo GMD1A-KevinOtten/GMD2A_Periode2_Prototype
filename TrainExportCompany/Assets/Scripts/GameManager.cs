@@ -5,8 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-	
-	public static void QuitGame()
+    public static GameManager gm;
+
+    void Start()
+    {
+        if(gm == null)
+        {
+            gm = this;
+        }
+        else if(gm != null && gm != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public static void QuitGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
