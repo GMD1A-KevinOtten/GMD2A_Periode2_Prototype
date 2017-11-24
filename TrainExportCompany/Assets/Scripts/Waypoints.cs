@@ -21,7 +21,7 @@ public class Waypoints : MonoBehaviour {
 
     public void MoveToWaypoint()
     {
-        if (inRange == false)
+        if (inRange == false && index >= 0)
         {
             if(wp[index] != null)
             {
