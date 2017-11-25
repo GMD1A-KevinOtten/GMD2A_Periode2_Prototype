@@ -10,7 +10,20 @@ public class RouteSwitchHandle : MonoBehaviour {
 	void Start () {
         parentSwitch = GetComponentInParent<RouteSwitch>();
         dirText = GetComponentInChildren<TextMesh>();
-	}
+
+        if (parentSwitch.goLeft && parentSwitch.lockedDir != "Left")
+        {
+            dirText.text = "Left";
+        }
+        else if (!parentSwitch.goRight && parentSwitch.lockedDir != "Right")
+        {
+            dirText.text = "Right";
+        }
+        else if (parentSwitch.goBack && parentSwitch.lockedDir != "Back")
+        {
+            dirText.text = "Back";
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,26 +34,27 @@ public class RouteSwitchHandle : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (parentSwitch.turnRight)
+            if (!parentSwitch.goLeft && parentSwitch.lockedDir != "Left")
             {
-                parentSwitch.turnRight = false;
+                parentSwitch.goLeft = true;
+                parentSwitch.goRight = false;
+                parentSwitch.goBack = false;
                 dirText.text = "Left";
             }
-            else if (!parentSwitch.turnRight)
+            else if (!parentSwitch.goRight && parentSwitch.lockedDir != "Right")
             {
-                parentSwitch.turnRight = true;
+                parentSwitch.goRight = true;
+                parentSwitch.goLeft = false;
+                parentSwitch.goBack = false;
                 dirText.text = "Right";
             }
-            //else if (parentSwitch.turnedRightLastTime)
-            //{
-                
-            //    dirText.text = "Left";
-            //}
-            //else if (!parentSwitch.turnedRightLastTime)
-            //{
-
-            //    dirText.text = "Right";
-            //}
+            else if(!parentSwitch.goBack && parentSwitch.lockedDir != "Back" && parentSwitch.lockedDir == "Left" || parentSwitch.lockedDir == "Right")
+            {
+                parentSwitch.goRight = false;
+                parentSwitch.goLeft = false;
+                parentSwitch.goBack = true;
+                dirText.text = "Back";
+            }
         }
     }
 }

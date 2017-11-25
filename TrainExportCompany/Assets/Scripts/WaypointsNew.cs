@@ -8,9 +8,10 @@ public class WaypointsNew : MonoBehaviour {
     public float speed;
 
     private GameObject nextWp;
+    public GameObject nextSwitch;
 	// Use this for initialization
 	void Start () {
-		
+        SetNextSwitch();
 	}
 	
 	// Update is called once per frame
@@ -41,11 +42,33 @@ public class WaypointsNew : MonoBehaviour {
         if(nextWp != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, nextWp.transform.position, speed * Time.deltaTime);
+            if(nextSwitch != null)
+            {
+                if(nextWp != nextSwitch)
+                {
+                    nextSwitch.GetComponent<RouteSwitch>().wpTrainCameFrom = nextWp;
+                }
+                if(nextWp == nextSwitch)
+                {
+                    RouteSwitch r = nextSwitch.GetComponent<RouteSwitch>();
+                    if(r != null)
+                    {
+                        r.CheckWaypointBeforeSwitch();
+                        r = null;
+                    }
+                }
+
+            }
             if(transform.position == nextWp.transform.position)
             {
                 wp.Remove(nextWp);
                 nextWp = null;
             }
         }
+    }
+
+    public void SetNextSwitch()
+    {
+        nextSwitch = wp[wp.Count -1];
     }
 }
