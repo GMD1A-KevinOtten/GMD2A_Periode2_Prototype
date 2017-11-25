@@ -552,6 +552,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.56, y: 1, z: 4.6861672}
   m_Center: {x: -6.1390892e-12, y: 0, z: -2.0419166}
+--- !u!114 &382479648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 382479643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff537fbded40acb4690da3bb8541ac07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wp:
+  - {fileID: 675444482}
+  - {fileID: 631777843}
+  - {fileID: 239552416}
+  - {fileID: 115444898}
+  speed: 2
 --- !u!1 &445033490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1643,11 @@ Prefab:
       propertyPath: wp.Array.data[3]
       value: 
       objectReference: {fileID: 115444898}
+    - target: {fileID: 114367276303022822, guid: dc1a5dfd8eb9fa14bbbbf17945571949,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82690087623095030, guid: dc1a5dfd8eb9fa14bbbbf17945571949, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dc1a5dfd8eb9fa14bbbbf17945571949, type: 2}

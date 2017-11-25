@@ -11,7 +11,7 @@ public class Waypoints : MonoBehaviour {
     public Transform target;
     // Use this for initialization
     void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class Waypoints : MonoBehaviour {
 
     public void MoveToWaypoint()
     {
-        if (inRange == false && index >= 0)
+        if (index >= 0)
         {
             if(wp[index] != null)
             {
@@ -38,14 +38,20 @@ public class Waypoints : MonoBehaviour {
                 transform.rotation = Quaternion.Lerp(transform.rotation, rot, speed * Time.deltaTime);
 
             }
-            if (index < wp.Count -1)
-            {
+            
                 if (transform.position == wp[index].transform.position)
                 {
                     print("test1");
                     index++;
+                    
                 }
-            }
+                else if(index >= wp.Count)
+                {
+                    //index = 0;
+                    Debug.Log("TRIGGERD");
+                }
+            
+            
         }
     }
 }

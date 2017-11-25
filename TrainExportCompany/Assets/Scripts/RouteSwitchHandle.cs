@@ -31,16 +31,16 @@ public class RouteSwitchHandle : MonoBehaviour {
                 parentSwitch.turnRight = true;
                 dirText.text = "Right";
             }
-            else if (parentSwitch.turnedRightLastTime)
-            {
+            //else if (parentSwitch.turnedRightLastTime)
+            //{
                 
-                dirText.text = "Left";
-            }
-            else if (!parentSwitch.turnedRightLastTime)
-            {
+            //    dirText.text = "Left";
+            //}
+            //else if (!parentSwitch.turnedRightLastTime)
+            //{
 
-                dirText.text = "Right";
-            }
+            //    dirText.text = "Right";
+            //}
         }
     }
 }
