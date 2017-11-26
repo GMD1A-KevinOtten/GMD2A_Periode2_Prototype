@@ -9,6 +9,7 @@ public class WaypointsNew : MonoBehaviour {
 
     private GameObject nextWp;
     public GameObject nextSwitch;
+
 	// Use this for initialization
 	void Start () {
         SetNextSwitch();
@@ -46,7 +47,11 @@ public class WaypointsNew : MonoBehaviour {
             {
                 if(nextWp != nextSwitch)
                 {
-                    nextSwitch.GetComponent<RouteSwitch>().wpTrainCameFrom = nextWp;
+                    RouteSwitch r = nextSwitch.GetComponent<RouteSwitch>();
+                    if(r != null)
+                    {
+                        r.wpTrainCameFrom = nextWp;
+                    }
                 }
                 if(nextWp == nextSwitch)
                 {

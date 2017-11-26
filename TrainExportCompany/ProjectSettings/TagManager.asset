@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Train
+  - SwitchArrow
   layers:
   - Default
   - TransparentFX

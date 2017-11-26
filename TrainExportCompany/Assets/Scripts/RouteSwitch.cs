@@ -124,10 +124,28 @@ public class RouteSwitch : MonoBehaviour {
         {
             if (wpTrainCameFrom == backWaypoints[0] && lockedDir != "Back")
             {
-                lockedDir = "Back";
+                goLeft = true;
+                goRight = false;
+                dirText.text = "Left";
                 goBack = false;
+                lockedDir = "Back";
             }
-
+            else if (wpTrainCameFrom == rightWaypoints[0] && lockedDir != "Right")
+            {
+                goBack = true;
+                goLeft = false;
+                dirText.text = "Back";
+                goRight = false;
+                lockedDir = "Right";
+            }
+            else if (wpTrainCameFrom == leftWaypoints[0] && lockedDir != "Left")
+            {
+                goRight = true;
+                goBack = false;
+                dirText.text = "Right";
+                goLeft = false;
+                lockedDir = "Left";
+            }
         }
     }
     }
