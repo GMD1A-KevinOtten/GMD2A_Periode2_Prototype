@@ -122,7 +122,7 @@ public class RouteSwitch : MonoBehaviour {
     {
         if(wpTrainCameFrom != null)
         {
-            if (wpTrainCameFrom == backWaypoints[0] && lockedDir != "Back")
+            if (wpTrainCameFrom == backWaypoints[0] && lockedDir != "Back" && !goRight)
             {
                 goLeft = true;
                 goRight = false;
@@ -130,7 +130,7 @@ public class RouteSwitch : MonoBehaviour {
                 goBack = false;
                 lockedDir = "Back";
             }
-            else if (wpTrainCameFrom == rightWaypoints[0] && lockedDir != "Right")
+            else if (wpTrainCameFrom == rightWaypoints[0] && lockedDir != "Right" && !goLeft)
             {
                 goBack = true;
                 goLeft = false;
@@ -138,7 +138,7 @@ public class RouteSwitch : MonoBehaviour {
                 goRight = false;
                 lockedDir = "Right";
             }
-            else if (wpTrainCameFrom == leftWaypoints[0] && lockedDir != "Left")
+            else if (wpTrainCameFrom == leftWaypoints[0] && lockedDir != "Left" && !goBack)
             {
                 goRight = true;
                 goBack = false;

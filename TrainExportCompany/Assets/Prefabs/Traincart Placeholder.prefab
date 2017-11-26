@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33088147856926568}
   - component: {fileID: 65588012240400930}
   - component: {fileID: 23197399896321024}
-  - component: {fileID: 114937863244707542}
+  - component: {fileID: 114451309691557630}
   m_Layer: 0
   m_Name: Traincart Placeholder
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377881609992958}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 15.723, y: 0.53603, z: 1.012}
+  m_LocalPosition: {x: 12.945, y: 0.53603, z: 1.034}
   m_LocalScale: {x: 0.8403947, y: 1, z: 2.459648}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114937863244707542
+--- !u!114 &114451309691557630
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -107,3 +107,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87dffa1a64a09943a31aabaafd7cc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trainWp: {fileID: 0}
+  train: {fileID: 0}
