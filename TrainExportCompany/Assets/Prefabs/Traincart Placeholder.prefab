@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1377881609992958}
   m_IsPrefabParent: 1
+--- !u!1 &1364696348214130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4355477388692122}
+  m_Layer: 0
+  m_Name: Followcart
+  m_TagString: FollowCart
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1377881609992958
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,16 +45,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4355477388692122
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1364696348214130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: -0.469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4760366891894784}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4760366891894784
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377881609992958}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 12.945, y: 0.53603, z: 1.034}
-  m_LocalScale: {x: 0.8403947, y: 1, z: 2.459648}
-  m_Children: []
+  m_LocalRotation: {x: 0.000000013504177, y: -0.7071058, z: 0.000000029802322, w: 0.70710784}
+  m_LocalPosition: {x: 15.45, y: 0.5690012, z: 1.0105202}
+  m_LocalScale: {x: 0.8403956, y: 1, z: 2.45965}
+  m_Children:
+  - {fileID: 4355477388692122}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
@@ -107,5 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87dffa1a64a09943a31aabaafd7cc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainWp: {fileID: 0}
-  train: {fileID: 0}
+  wp:
+  - {fileID: 0}
