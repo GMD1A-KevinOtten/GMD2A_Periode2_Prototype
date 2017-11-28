@@ -105,7 +105,10 @@ public class UIManager : MonoBehaviour {
 
     public void UpdateStationUI(Stations currentStation)
     {
-
+        GOneText.text = "Iron: " + currentStation.gIron;
+        GTwoText.text = "Ore: " + currentStation.gOre;
+        GThreeText.text = "Grain: " + currentStation.gGrain;
+        GFourText.text = "Coal: " + currentStation.gCoal;
     }
 
     public void Buy(int GoodsType)
