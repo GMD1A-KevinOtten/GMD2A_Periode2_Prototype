@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
@@ -18,6 +19,11 @@ public class UIManager : MonoBehaviour {
     public GameObject trainPanel;
     public GameObject stationPanel;
     private GameObject lastPanel;
+    //StationTexst
+    public Text GOneText;
+    public Text GTwoText;
+    public Text GThreeText;
+    public Text GFourText;
 
     void Start()
     {
@@ -97,4 +103,48 @@ public class UIManager : MonoBehaviour {
 
     //UI Station
 
+    public void UpdateStationUI(Stations currentStation)
+    {
+
+    }
+
+    public void Buy(int GoodsType)
+    {
+        if(GoodsType == 1)
+        {
+
+        }
+        else if(GoodsType == 2)
+        {
+
+        }
+        else if(GoodsType == 3)
+        {
+
+        }
+        else if(GoodsType == 4)
+        {
+
+        }
+    }
+
+    public void Sell(int GoodsType)
+    {
+        if(GoodsType == 1)
+        {
+
+        }
+        else if(GoodsType == 2)
+        {
+
+        }
+        else if(GoodsType == 3)
+        {
+
+        }
+        else if(GoodsType == 4)
+        {
+
+        }
+    }
 }
