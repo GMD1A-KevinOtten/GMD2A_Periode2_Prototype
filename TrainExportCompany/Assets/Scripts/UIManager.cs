@@ -14,16 +14,19 @@ public class UIManager : MonoBehaviour {
     }
     public UIState uiState;
 
+    //Station
+    public Stations station;
     //Pannels
     public GameObject pausePanel;
     public GameObject trainPanel;
     public GameObject stationPanel;
     private GameObject lastPanel;
     //StationTexst
-    public Text GOneText;
-    public Text GTwoText;
-    public Text GThreeText;
-    public Text GFourText;
+    public Text gOneText;
+    public Text gTwoText;
+    public Text gThreeText;
+    public Text gFourText;
+    public Text stationMessage;
 
     void Start()
     {
@@ -103,51 +106,136 @@ public class UIManager : MonoBehaviour {
 
     //UI Station
 
-    public void UpdateStationUI(Stations currentStation)
+    public void UpdateStationInfo(Stations currentStation)
     {
-        GOneText.text = "Iron: " + currentStation.gIron;
-        GTwoText.text = "Ore: " + currentStation.gOre;
-        GThreeText.text = "Grain: " + currentStation.gGrain;
-        GFourText.text = "Coal: " + currentStation.gCoal;
+        uiState = UIState.Station;
+        ChangeUI();
+        station = currentStation;
+        UpdateStationUI();
+    }
+
+    public void UpdateStationUI()
+    {
+        gOneText.text = "Iron: " + station.gIron;
+        gTwoText.text = "Ore: " + station.gOre;
+        gThreeText.text = "Grain: " + station.gGrain;
+        gFourText.text = "Coal: " + station.gCoal;
     }
 
     public void Buy(int GoodsType)
     {
         if(GoodsType == 1)
         {
-
+            if(station.gIron > 0)
+            {
+                station.gIron -= 10;
+                station.cargo.cargoIron += 10;
+                UpdateStationUI();
+            }
+            else if(station.gIron <= 0)
+            {
+                StationMessage("there is no suplly or there is demand for this recource");
+            }
         }
         else if(GoodsType == 2)
         {
-
+            if(station.gOre > 0)
+            {
+                station.gOre -= 10;
+                station.cargo.cargoOre += 10;
+                UpdateStationUI();
+            }
+            else if (station.gOre <= 0)
+            {
+                StationMessage("there is no suplly or there is demand for this recource");
+            }
         }
         else if(GoodsType == 3)
         {
-
+            if(station.gGrain > 0)
+            {
+                station.gGrain -= 10;
+                station.cargo.cargoGrain += 10;
+                UpdateStationUI();
+            }
+            else if (station.gGrain <= 0)
+            {
+                StationMessage("there is no suplly or there is demand for this recource");
+            }
         }
         else if(GoodsType == 4)
         {
-
+            if(station.gCoal > 0)
+            {
+                station.gCoal -= 10;
+                station.cargo.cargoCoal += 10;
+                UpdateStationUI();
+            }
+            else if (station.gCoal <= 0)
+            {
+                StationMessage("there is no suplly or there is demand for this recource");
+            }
         }
     }
 
     public void Sell(int GoodsType)
     {
-        if(GoodsType == 1)
+        if (GoodsType == 1)
         {
-
+            if(station.gIron < 0)
+            {
+                station.gIron += 10;
+                station.cargo.cargoIron -= 10;
+                UpdateStationUI();
+            }
+            else if(station.gIron >= 0)
+            {
+                StationMessage("There is no Demand or there is suplly for this recource");
+            }
         }
-        else if(GoodsType == 2)
+        else if (GoodsType == 2)
         {
-
+            if(station.gOre < 0)
+            {
+                station.gOre += 10;
+                station.cargo.cargoOre -= 10;
+                UpdateStationUI();
+            }
+            else if(station.gOre >= 0)
+            {
+                StationMessage("There is no Demand or there is suplly for this recource");
+            }
         }
-        else if(GoodsType == 3)
+        else if (GoodsType == 3)
         {
-
+            if(station.gGrain < 0)
+            {
+                station.gGrain += 10;
+                station.cargo.cargoGrain -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gGrain >= 0)
+            {
+                StationMessage("There is no Demand or there is suplly for this recource");
+            }
         }
-        else if(GoodsType == 4)
+        else if (GoodsType == 4)
         {
-
+            if(station.gCoal < 0)
+            {
+                station.gCoal += 10;
+                station.cargo.cargoCoal -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gCoal >= 0)
+            {
+                StationMessage("There is no Demand or there is suplly for this recource");
+            }
         }
+    }
+
+    public void StationMessage(string message)
+    {
+        stationMessage.text = message;
     }
 }
