@@ -27,6 +27,10 @@ public class UIManager : MonoBehaviour {
     public Text gThreeText;
     public Text gFourText;
     public Text stationMessage;
+    public Text carIron;
+    public Text carOre;
+    public Text carGrain;
+    public Text carCoal;
 
     void Start()
     {
@@ -120,6 +124,11 @@ public class UIManager : MonoBehaviour {
         gTwoText.text = "Ore: " + station.gOre;
         gThreeText.text = "Grain: " + station.gGrain;
         gFourText.text = "Coal: " + station.gCoal;
+
+        carIron.text = "Iron: " + station.cargo.cargoIron;
+        carOre.text = "Ore: " + station.cargo.cargoOre;
+        carGrain.text = "Grain: " + station.cargo.cargoGrain;
+        carCoal.text = "Coal: " + station.cargo.cargoCoal;
     }
 
     public void Buy(int GoodsType)
