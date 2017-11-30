@@ -15,7 +15,7 @@ public class Stations : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Train" && inStation == false)// && train.speed == 0)
+        if(other.tag == "Train" && !inStation && other.GetComponent<Train>().speed == 0)
         {
             ui.UpdateStationInfo(this);
             inStation = true;
