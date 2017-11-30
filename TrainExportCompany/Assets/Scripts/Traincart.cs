@@ -6,9 +6,19 @@ public class Traincart : MonoBehaviour {
     public List<GameObject> wp = new List<GameObject>();
     private GameObject nextWp;
     private Train train;
+
+    public bool aiCart;
+    public Train trainToFollow;
     void Start()
     {
-        train = GameObject.FindGameObjectWithTag("Train").GetComponent<Train>();
+        if(transform.tag == "PlayerCart")
+        {
+            train = GameObject.FindGameObjectWithTag("Train").GetComponent<Train>();
+        }
+        else if(aiCart && transform.tag != "PlayerCart")
+        {
+            train = trainToFollow;
+        }
         nextWp = wp[0];
         
     }

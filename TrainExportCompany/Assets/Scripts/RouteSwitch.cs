@@ -42,7 +42,7 @@ public class RouteSwitch : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
 
-        if(other.transform.tag == "Train")
+        if(other.transform.tag == "Train" || other.transform.tag == "AITrain")
         {
             WaypointsNew trainWayPoints = other.GetComponent<WaypointsNew>();
 

@@ -8,6 +8,8 @@ TagManager:
   - SwitchArrow
   - CartFollow
   - FollowCart
+  - AITrain
+  - PlayerCart
   layers:
   - Default
   - TransparentFX
