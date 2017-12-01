@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 7d6742cb38c95fb42acc5b87a415f7b2
+timeCreated: 1512135978
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bell
+    100002: Box001
+    100004: Box002
+    100006: Cylinder023
+    100008: Cylinder028
+    100010: Cylinder029
+    100012: Front wheels
+    100014: Lamp
+    100016: Lamp glass
+    100018: Left back wheel
+    100020: Left front wheel
+    100022: Left middle wheel
+    100024: Object004
+    100026: Object006
+    100028: Right back wheel
+    100030: Right front wheel
+    100032: Right middle wheel
+    100034: Steam chamber
+    100036: //RootNode
+    100038: Train bottom part
+    400000: Bell
+    400002: Box001
+    400004: Box002
+    400006: Cylinder023
+    400008: Cylinder028
+    400010: Cylinder029
+    400012: Front wheels
+    400014: Lamp
+    400016: Lamp glass
+    400018: Left back wheel
+    400020: Left front wheel
+    400022: Left middle wheel
+    400024: Object004
+    400026: Object006
+    400028: Right back wheel
+    400030: Right front wheel
+    400032: Right middle wheel
+    400034: Steam chamber
+    400036: //RootNode
+    400038: Train bottom part
+    2300000: Bell
+    2300002: Box001
+    2300004: Box002
+    2300006: Cylinder023
+    2300008: Cylinder028
+    2300010: Cylinder029
+    2300012: Front wheels
+    2300014: Lamp
+    2300016: Lamp glass
+    2300018: Left back wheel
+    2300020: Left front wheel
+    2300022: Left middle wheel
+    2300024: Object004
+    2300026: Object006
+    2300028: Right back wheel
+    2300030: Right front wheel
+    2300032: Right middle wheel
+    2300034: Steam chamber
+    2300036: Train bottom part
+    3300000: Bell
+    3300002: Box001
+    3300004: Box002
+    3300006: Cylinder023
+    3300008: Cylinder028
+    3300010: Cylinder029
+    3300012: Front wheels
+    3300014: Lamp
+    3300016: Lamp glass
+    3300018: Left back wheel
+    3300020: Left front wheel
+    3300022: Left middle wheel
+    3300024: Object004
+    3300026: Object006
+    3300028: Right back wheel
+    3300030: Right front wheel
+    3300032: Right middle wheel
+    3300034: Steam chamber
+    3300036: Train bottom part
+    4300000: Train bottom part
+    4300002: Steam chamber
+    4300004: Bell
+    4300006: Front wheels
+    4300008: Left back wheel
+    4300010: Left middle wheel
+    4300012: Object004
+    4300014: Box001
+    4300016: Cylinder023
+    4300018: Left front wheel
+    4300020: Right back wheel
+    4300022: Right middle wheel
+    4300024: Object006
+    4300026: Box002
+    4300028: Cylinder028
+    4300030: Lamp glass
+    4300032: Right front wheel
+    4300034: Lamp
+    4300036: Cylinder029
+    7400000: Locomotive
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 08 - Default
+    second: {fileID: 2100000, guid: ebf409ea72b839348a4b7ad55b1c3b15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 09 - Default
+    second: {fileID: 2100000, guid: 34c65684d828bc94285c724a8d88ce85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 3a4e487fb8daa1340bca20a6a3c68187, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Locomotive
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
