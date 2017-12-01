@@ -11,6 +11,7 @@ public class WaypointsNew : MonoBehaviour {
     public GameObject nextSwitch;
 
     public float speedAtStop;
+    private bool waiting;
 
     // Use this for initialization
     void Start () {
@@ -65,7 +66,12 @@ public class WaypointsNew : MonoBehaviour {
                     }
                     else if (!r.trainPassing && transform.tag == "AITrain" && GetComponent<Train>().speed <= 0 )
                     {
-                        GetComponent<Train>().speed = speedAtStop;
+                        if (!waiting)
+                        {
+                            StartCoroutine(Wait());
+                            waiting = true;
+                        }
+                       
                     }
                     if (r != null)
                     {
@@ -86,5 +92,12 @@ public class WaypointsNew : MonoBehaviour {
     public void SetNextSwitch()
     {
         nextSwitch = wp[wp.Count -1];
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        GetComponent<Train>().speed = speedAtStop;
+        waiting = false;
     }
 }

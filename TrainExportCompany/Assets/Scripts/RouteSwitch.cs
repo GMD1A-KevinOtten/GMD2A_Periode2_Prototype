@@ -41,12 +41,17 @@ public class RouteSwitch : MonoBehaviour {
    
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if(other.transform.tag == "Train" || other.transform.tag == "AITrain" || other.transform.tag == "PlayerCart" || other.transform.tag == "AICart")
+        if (other.transform.tag == "Train" || other.transform.tag == "AITrain" || other.transform.tag == "PlayerCart" || other.transform.tag == "AICart")
         {
             trainPassing = true;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+       
         
         if(other.transform.tag == "Train" || other.transform.tag == "AITrain")
         {
