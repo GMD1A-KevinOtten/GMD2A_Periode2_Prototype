@@ -9,6 +9,7 @@ public class Cargo : MonoBehaviour {
     public int cargoGrain;
     public int cargoCoal;
 
+    public int cashMoney;
 
 
 }

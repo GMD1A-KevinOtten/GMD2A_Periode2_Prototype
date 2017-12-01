@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cd07302f4edbc4f44bec4fdebda9be3d
 timeCreated: 1512135978
+=======
+guid: 0a1d25643e366cc45a270cf76c6ab0db
+timeCreated: 1512136099
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -62,19 +67,31 @@ ModelImporter:
     4300016: Cargo_wheel005
     4300018: Cargo_wheel006
     4300020: Cargo_wheel007
+<<<<<<< HEAD
     7400000: CargoCart
+=======
+    7400000: Take 001
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 08 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: ebf409ea72b839348a4b7ad55b1c3b15, type: 2}
+=======
+    second: {fileID: 2100000, guid: 200581274b6507341a24c0f31505aa2c, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 09 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 34c65684d828bc94285c724a8d88ce85, type: 2}
+=======
+    second: {fileID: 2100000, guid: bfaed455c98573349aa6a013c0e6bdd5, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   materials:
     importMaterials: 1
     materialName: 0
@@ -100,6 +117,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
+<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: CargoCart
@@ -129,6 +147,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
     isReadable: 1
   meshes:
     lODScreenPercentages: []

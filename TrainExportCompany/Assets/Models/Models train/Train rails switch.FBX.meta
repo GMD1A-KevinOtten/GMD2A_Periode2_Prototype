@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fe71ba6f29cf7984d859ba851c131592
 timeCreated: 1512135979
+=======
+guid: 64434bda47a592d43b74e6038a366757
+timeCreated: 1512136099
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -48,17 +53,29 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 04 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 5dd71eb53763fda40abfadcc9c96d2e8, type: 2}
+=======
+    second: {fileID: 2100000, guid: 710e9d69102ea9a47be1bca164735f95, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 05 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 0008efda73eed5e4ba50c6c4a65b27f5, type: 2}
+=======
+    second: {fileID: 2100000, guid: 432e6c96514899c46be34c9c813aca8b, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 08 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: ebf409ea72b839348a4b7ad55b1c3b15, type: 2}
+=======
+    second: {fileID: 2100000, guid: 200581274b6507341a24c0f31505aa2c, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -68,12 +85,20 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #26'
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 2d2c2ec58a3c11e48a8c2e23bb91b62a, type: 2}
+=======
+    second: {fileID: 2100000, guid: c754288881bdfbd4da408a3867ffccc5, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #27'
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 2d2c2ec58a3c11e48a8c2e23bb91b62a, type: 2}
+=======
+    second: {fileID: 2100000, guid: c754288881bdfbd4da408a3867ffccc5, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

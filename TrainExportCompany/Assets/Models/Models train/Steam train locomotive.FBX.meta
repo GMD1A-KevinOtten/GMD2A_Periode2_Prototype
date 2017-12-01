@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7d6742cb38c95fb42acc5b87a415f7b2
 timeCreated: 1512135978
+=======
+guid: 0581e969a16e12c4c91650ce7ebe2d75
+timeCreated: 1512136099
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -102,19 +107,31 @@ ModelImporter:
     4300032: Right front wheel
     4300034: Lamp
     4300036: Cylinder029
+<<<<<<< HEAD
     7400000: Locomotive
+=======
+    7400000: Take 001
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 08 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: ebf409ea72b839348a4b7ad55b1c3b15, type: 2}
+=======
+    second: {fileID: 2100000, guid: 200581274b6507341a24c0f31505aa2c, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 09 - Default
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 34c65684d828bc94285c724a8d88ce85, type: 2}
+=======
+    second: {fileID: 2100000, guid: bfaed455c98573349aa6a013c0e6bdd5, type: 2}
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -145,6 +162,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
+<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: Locomotive
@@ -174,6 +192,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> ef74579a3718540c480336ffa5c27a777b007551
     isReadable: 1
   meshes:
     lODScreenPercentages: []

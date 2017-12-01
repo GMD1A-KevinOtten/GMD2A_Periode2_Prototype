@@ -135,54 +135,102 @@ public class UIManager : MonoBehaviour {
     {
         if(GoodsType == 1)
         {
-            if(station.gIron > 0)
+            if (station.gIron >= 100 && station.cargo.cashMoney >= 5)
             {
+                station.cargo.cashMoney -= 5;
                 station.gIron -= 10;
                 station.cargo.cargoIron += 10;
                 UpdateStationUI();
             }
-            else if(station.gIron <= 0)
+            else if (station.gIron >= 10 && station.cargo.cashMoney >= 10)
             {
-                StationMessage("there is no suplly or there is demand for this recource");
+                station.cargo.cashMoney -= 10;
+                station.gIron -= 10;
+                station.cargo.cargoIron += 10;
+                UpdateStationUI();
+            }
+            else if (station.gIron < 10)
+            {
+                StationMessage("There is not enough produce");
+            }
+            else if (station.cargo.cashMoney < 10)
+            {
+                StationMessage("Not enough CashMoney");
             }
         }
         else if(GoodsType == 2)
         {
-            if(station.gOre > 0)
+            if (station.gOre >= 100 && station.cargo.cashMoney >= 5)
             {
+                station.cargo.cashMoney -= 5;
                 station.gOre -= 10;
                 station.cargo.cargoOre += 10;
                 UpdateStationUI();
             }
-            else if (station.gOre <= 0)
+            else if (station.gOre >= 10 && station.cargo.cashMoney >= 10)
             {
-                StationMessage("there is no suplly or there is demand for this recource");
+                station.cargo.cashMoney -= 10;
+                station.gOre -= 10;
+                station.cargo.cargoOre += 10;
+                UpdateStationUI();
+            }
+            else if (station.gOre < 10)
+            {
+                StationMessage("There is Not enough produce");
+            }
+            else if (station.cargo.cashMoney < 10)
+            {
+                StationMessage("Not enough CashMoney");
             }
         }
         else if(GoodsType == 3)
         {
-            if(station.gGrain > 0)
+            if (station.gGrain >= 100 && station.cargo.cashMoney >= 5)
             {
+                station.cargo.cashMoney -= 5;
                 station.gGrain -= 10;
                 station.cargo.cargoGrain += 10;
                 UpdateStationUI();
             }
-            else if (station.gGrain <= 0)
+            else if (station.gGrain >= 10 && station.cargo.cashMoney >= 10)
             {
-                StationMessage("there is no suplly or there is demand for this recource");
+                station.cargo.cashMoney -= 10;
+                station.gGrain -= 10;
+                station.cargo.cargoGrain += 10;
+                UpdateStationUI();
+            }
+            else if (station.gGrain < 10)
+            {
+                StationMessage("There is Not enough produce");
+            }
+            else if (station.cargo.cashMoney < 10)
+            {
+                StationMessage("Not enough CashMoney");
             }
         }
         else if(GoodsType == 4)
         {
-            if(station.gCoal > 0)
+            if (station.gCoal >= 100 && station.cargo.cashMoney >= 5)
             {
+                station.cargo.cashMoney -= 5;
                 station.gCoal -= 10;
                 station.cargo.cargoCoal += 10;
                 UpdateStationUI();
             }
-            else if (station.gCoal <= 0)
+            else if (station.gCoal >= 10 && station.cargo.cashMoney >= 10)
             {
-                StationMessage("there is no suplly or there is demand for this recource");
+                station.cargo.cashMoney -= 10;
+                station.gCoal -= 10;
+                station.cargo.cargoCoal += 10;
+                UpdateStationUI();
+            }
+            else if (station.gCoal < 10)
+            {
+                StationMessage("There is Not enough produce");
+            }
+            else if (station.cargo.cashMoney < 10)
+            {
+                StationMessage("Not enough CashMoney");
             }
         }
     }
@@ -191,52 +239,160 @@ public class UIManager : MonoBehaviour {
     {
         if (GoodsType == 1)
         {
-            if(station.gIron < 0)
+            if(station.gIron <= -100 && station.cargo.cargoIron >= 10)
             {
+                station.cargo.cashMoney += 20;
                 station.gIron += 10;
                 station.cargo.cargoIron -= 10;
                 UpdateStationUI();
             }
-            else if(station.gIron >= 0)
+            else if (station.gIron <= -50 && station.cargo.cargoIron >= 10)
             {
-                StationMessage("There is no Demand or there is suplly for this recource");
+                station.cargo.cashMoney += 10;
+                station.gIron += 10;
+                station.cargo.cargoIron -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gIron <= 0 && station.cargo.cargoIron >= 10)
+            {
+                station.cargo.cashMoney += 5;
+                station.gIron += 10;
+                station.cargo.cargoIron -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gIron > 0 && station.cargo.cargoIron >= 10)
+            {
+                station.cargo.cashMoney += 1;
+                station.gIron += 10;
+                station.cargo.cargoIron -= 10;
+                UpdateStationUI();
+            }
+            else if(station.cargo.cargoIron < 10)
+            {
+                StationMessage("You don't have enough cargo");
+            }
+            else if(station.gIron >= 500)
+            {
+                StationMessage("There is no Demand or there is too much suplly for this recource");
             }
         }
         else if (GoodsType == 2)
         {
-            if(station.gOre < 0)
+            if (station.gOre <= -100 && station.cargo.cargoOre >= 10)
             {
+                station.cargo.cashMoney += 20;
                 station.gOre += 10;
                 station.cargo.cargoOre -= 10;
                 UpdateStationUI();
             }
-            else if(station.gOre >= 0)
+            else if (station.gOre <= -50 && station.cargo.cargoOre >= 10)
             {
-                StationMessage("There is no Demand or there is suplly for this recource");
+                station.cargo.cashMoney += 10;
+                station.gOre += 10;
+                station.cargo.cargoOre -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gOre <= 0 && station.cargo.cargoOre >= 10)
+            {
+                station.cargo.cashMoney += 5;
+                station.gOre += 10;
+                station.cargo.cargoOre -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gOre > 0 && station.cargo.cargoOre >= 10)
+            {
+                station.cargo.cashMoney += 1;
+                station.gOre += 10;
+                station.cargo.cargoOre -= 10;
+                UpdateStationUI();
+            }
+            else if (station.cargo.cargoOre < 10)
+            {
+                StationMessage("You don't have enough cargo");
+            }
+            else if(station.gOre >= 500)
+            {
+                StationMessage("There is no Demand or there is too much suplly for this recource");
             }
         }
         else if (GoodsType == 3)
         {
-            if(station.gGrain < 0)
+            if (station.gGrain <= -100 && station.cargo.cargoGrain >= 10)
             {
+                station.cargo.cashMoney += 20;
                 station.gGrain += 10;
                 station.cargo.cargoGrain -= 10;
                 UpdateStationUI();
             }
-            else if (station.gGrain >= 0)
+            else if (station.gGrain <= -50 && station.cargo.cargoGrain >= 10)
             {
-                StationMessage("There is no Demand or there is suplly for this recource");
+                station.cargo.cashMoney += 10;
+                station.gGrain += 10;
+                station.cargo.cargoGrain -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gGrain <= 0 && station.cargo.cargoGrain >= 10)
+            {
+                station.cargo.cashMoney += 5;
+                station.gGrain += 10;
+                station.cargo.cargoGrain -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gGrain > 0 && station.cargo.cargoGrain >= 10)
+            {
+                station.cargo.cashMoney += 1;
+                station.gGrain += 10;
+                station.cargo.cargoGrain -= 10;
+                UpdateStationUI();
+            }
+            else if (station.cargo.cargoGrain < 10)
+            {
+                StationMessage("You don't have enough cargo");
+            }
+            else if (station.gGrain >= 500)
+            {
+                StationMessage("There is no Demand or there is too much suplly for this recource");
             }
         }
         else if (GoodsType == 4)
         {
-            if(station.gCoal < 0)
+            if (station.gCoal <= -100 && station.cargo.cargoCoal >= 10)
             {
+                print("Test 1");
+                station.cargo.cashMoney += 20;
                 station.gCoal += 10;
                 station.cargo.cargoCoal -= 10;
                 UpdateStationUI();
             }
-            else if (station.gCoal >= 0)
+            else if (station.gCoal <= -50 && station.cargo.cargoCoal >= 10)
+            {
+                print("Test 2");
+                station.cargo.cashMoney += 10;
+                station.gCoal += 10;
+                station.cargo.cargoCoal -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gCoal <= 0 && station.cargo.cargoCoal >= 10)
+            {
+                print("Test 3");
+                station.cargo.cashMoney += 5;
+                station.gCoal += 10;
+                station.cargo.cargoCoal -= 10;
+                UpdateStationUI();
+            }
+            else if (station.gCoal > 0 && station.cargo.cargoCoal >= 10)
+            {
+                print("Test 4");
+                station.cargo.cashMoney += 1;
+                station.gCoal += 10;
+                station.cargo.cargoCoal -= 10;
+                UpdateStationUI();
+            }
+            else if (station.cargo.cargoCoal < 10)
+            {
+                StationMessage("You don't have enough cargo");
+            }
+            else if (station.gCoal >= 500)
             {
                 StationMessage("There is no Demand or there is suplly for this recource");
             }
