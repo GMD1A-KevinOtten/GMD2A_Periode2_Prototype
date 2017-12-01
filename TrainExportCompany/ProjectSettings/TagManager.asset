@@ -10,6 +10,7 @@ TagManager:
   - FollowCart
   - AITrain
   - PlayerCart
+  - AICart
   layers:
   - Default
   - TransparentFX

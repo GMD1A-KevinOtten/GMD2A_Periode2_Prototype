@@ -16,6 +16,8 @@ public class RouteSwitch : MonoBehaviour {
     private TextMesh dirText;
     public GameObject wpTrainCameFrom;
 
+    public bool trainPassing;
+
     void Start () {
         dirText = GetComponentInChildren<TextMesh>();
         if (goRight)
@@ -41,9 +43,14 @@ public class RouteSwitch : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
+        if(other.transform.tag == "Train" || other.transform.tag == "AITrain" || other.transform.tag == "PlayerCart" || other.transform.tag == "AICart")
+        {
+            trainPassing = true;
+        }
+        
         if(other.transform.tag == "Train" || other.transform.tag == "AITrain")
         {
+           
             WaypointsNew trainWayPoints = other.GetComponent<WaypointsNew>();
 
             if (goRight && lockedDir != "Left")
@@ -117,6 +124,14 @@ public class RouteSwitch : MonoBehaviour {
         }
 
         }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.transform.tag == "Train" || other.transform.tag == "AITrain" || other.transform.tag == "PlayerCart" || other.transform.tag == "AICart")
+        {
+            trainPassing = false;
+        }
+    }
 
     public void CheckWaypointBeforeSwitch()
     {

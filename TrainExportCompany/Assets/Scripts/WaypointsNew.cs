@@ -10,8 +10,10 @@ public class WaypointsNew : MonoBehaviour {
     private GameObject nextWp;
     public GameObject nextSwitch;
 
-	// Use this for initialization
-	void Start () {
+    public float speedAtStop;
+
+    // Use this for initialization
+    void Start () {
         SetNextSwitch();
 	}
 	
@@ -53,10 +55,19 @@ public class WaypointsNew : MonoBehaviour {
                         r.wpTrainCameFrom = nextWp;
                     }
                 }
-                if(nextWp == nextSwitch)
+                if(nextWp == nextSwitch && nextSwitch != null)
                 {
                     RouteSwitch r = nextSwitch.GetComponent<RouteSwitch>();
-                    if(r != null)
+                    if (r.trainPassing && transform.tag == "AITrain")
+                    {
+                        speedAtStop = 2;
+                        GetComponent<Train>().speed = 0;
+                    }
+                    else if (!r.trainPassing && transform.tag == "AITrain" && GetComponent<Train>().speed <= 0 )
+                    {
+                        GetComponent<Train>().speed = speedAtStop;
+                    }
+                    if (r != null)
                     {
                         r.CheckWaypointBeforeSwitch();
                         r = null;
