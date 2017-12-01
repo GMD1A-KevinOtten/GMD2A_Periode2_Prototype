@@ -17,6 +17,7 @@ public class Stations : MonoBehaviour {
     {
         if(other.tag == "Train" && !inStation && other.GetComponent<Train>().speed == 0)
         {
+            cargo = other.GetComponent<Cargo>();
             ui.UpdateStationInfo(this);
             inStation = true;
         }
