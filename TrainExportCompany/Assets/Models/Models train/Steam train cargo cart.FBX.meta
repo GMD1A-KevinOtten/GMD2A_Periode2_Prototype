@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: cd07302f4edbc4f44bec4fdebda9be3d
-timeCreated: 1512135978
-=======
-guid: 0a1d25643e366cc45a270cf76c6ab0db
-timeCreated: 1512136099
->>>>>>> ef74579a3718540c480336ffa5c27a777b007551
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -67,31 +60,19 @@ ModelImporter:
     4300016: Cargo_wheel005
     4300018: Cargo_wheel006
     4300020: Cargo_wheel007
-<<<<<<< HEAD
-    7400000: CargoCart
-=======
     7400000: Take 001
->>>>>>> ef74579a3718540c480336ffa5c27a777b007551
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 08 - Default
-<<<<<<< HEAD
     second: {fileID: 2100000, guid: ebf409ea72b839348a4b7ad55b1c3b15, type: 2}
-=======
-    second: {fileID: 2100000, guid: 200581274b6507341a24c0f31505aa2c, type: 2}
->>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 09 - Default
-<<<<<<< HEAD
     second: {fileID: 2100000, guid: 34c65684d828bc94285c724a8d88ce85, type: 2}
-=======
-    second: {fileID: 2100000, guid: bfaed455c98573349aa6a013c0e6bdd5, type: 2}
->>>>>>> ef74579a3718540c480336ffa5c27a777b007551
   materials:
     importMaterials: 1
     materialName: 0
@@ -117,39 +98,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-<<<<<<< HEAD
-    clipAnimations:
-    - serializedVersion: 16
-      name: CargoCart
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-=======
     clipAnimations: []
->>>>>>> ef74579a3718540c480336ffa5c27a777b007551
     isReadable: 1
   meshes:
     lODScreenPercentages: []

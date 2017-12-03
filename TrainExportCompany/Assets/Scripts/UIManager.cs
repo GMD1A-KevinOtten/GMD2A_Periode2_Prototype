@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
         Station
     }
     public UIState uiState;
-
+    public AudioGameManager agm;
     //Station
     public Stations station;
     //Pannels
@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour {
     void Start()
     {
         ChangeUIState();
+        agm = GameObject.FindWithTag("MainCamera").GetComponent<AudioGameManager>();
     }
 
     void Update()
@@ -137,6 +138,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gIron >= 100 && station.cargo.cashMoney >= 5)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 5;
                 station.gIron -= 10;
                 station.cargo.cargoIron += 10;
@@ -144,6 +146,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gIron >= 10 && station.cargo.cashMoney >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 10;
                 station.gIron -= 10;
                 station.cargo.cargoIron += 10;
@@ -162,6 +165,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gOre >= 100 && station.cargo.cashMoney >= 5)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 5;
                 station.gOre -= 10;
                 station.cargo.cargoOre += 10;
@@ -169,6 +173,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gOre >= 10 && station.cargo.cashMoney >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 10;
                 station.gOre -= 10;
                 station.cargo.cargoOre += 10;
@@ -187,6 +192,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gGrain >= 100 && station.cargo.cashMoney >= 5)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 5;
                 station.gGrain -= 10;
                 station.cargo.cargoGrain += 10;
@@ -194,6 +200,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gGrain >= 10 && station.cargo.cashMoney >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 10;
                 station.gGrain -= 10;
                 station.cargo.cargoGrain += 10;
@@ -212,6 +219,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gCoal >= 100 && station.cargo.cashMoney >= 5)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 5;
                 station.gCoal -= 10;
                 station.cargo.cargoCoal += 10;
@@ -219,6 +227,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gCoal >= 10 && station.cargo.cashMoney >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney -= 10;
                 station.gCoal -= 10;
                 station.cargo.cargoCoal += 10;
@@ -241,6 +250,7 @@ public class UIManager : MonoBehaviour {
         {
             if(station.gIron <= -100 && station.cargo.cargoIron >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 20;
                 station.gIron += 10;
                 station.cargo.cargoIron -= 10;
@@ -248,6 +258,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gIron <= -50 && station.cargo.cargoIron >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 10;
                 station.gIron += 10;
                 station.cargo.cargoIron -= 10;
@@ -255,6 +266,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gIron <= 0 && station.cargo.cargoIron >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 5;
                 station.gIron += 10;
                 station.cargo.cargoIron -= 10;
@@ -262,6 +274,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gIron > 0 && station.cargo.cargoIron >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 1;
                 station.gIron += 10;
                 station.cargo.cargoIron -= 10;
@@ -280,6 +293,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gOre <= -100 && station.cargo.cargoOre >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 20;
                 station.gOre += 10;
                 station.cargo.cargoOre -= 10;
@@ -287,6 +301,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gOre <= -50 && station.cargo.cargoOre >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 10;
                 station.gOre += 10;
                 station.cargo.cargoOre -= 10;
@@ -294,6 +309,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gOre <= 0 && station.cargo.cargoOre >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 5;
                 station.gOre += 10;
                 station.cargo.cargoOre -= 10;
@@ -301,6 +317,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gOre > 0 && station.cargo.cargoOre >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 1;
                 station.gOre += 10;
                 station.cargo.cargoOre -= 10;
@@ -319,6 +336,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gGrain <= -100 && station.cargo.cargoGrain >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 20;
                 station.gGrain += 10;
                 station.cargo.cargoGrain -= 10;
@@ -326,6 +344,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gGrain <= -50 && station.cargo.cargoGrain >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 10;
                 station.gGrain += 10;
                 station.cargo.cargoGrain -= 10;
@@ -333,6 +352,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gGrain <= 0 && station.cargo.cargoGrain >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 5;
                 station.gGrain += 10;
                 station.cargo.cargoGrain -= 10;
@@ -340,6 +360,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gGrain > 0 && station.cargo.cargoGrain >= 10)
             {
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 1;
                 station.gGrain += 10;
                 station.cargo.cargoGrain -= 10;
@@ -358,7 +379,7 @@ public class UIManager : MonoBehaviour {
         {
             if (station.gCoal <= -100 && station.cargo.cargoCoal >= 10)
             {
-                print("Test 1");
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 20;
                 station.gCoal += 10;
                 station.cargo.cargoCoal -= 10;
@@ -366,7 +387,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gCoal <= -50 && station.cargo.cargoCoal >= 10)
             {
-                print("Test 2");
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 10;
                 station.gCoal += 10;
                 station.cargo.cargoCoal -= 10;
@@ -374,7 +395,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gCoal <= 0 && station.cargo.cargoCoal >= 10)
             {
-                print("Test 3");
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 5;
                 station.gCoal += 10;
                 station.cargo.cargoCoal -= 10;
@@ -382,7 +403,7 @@ public class UIManager : MonoBehaviour {
             }
             else if (station.gCoal > 0 && station.cargo.cargoCoal >= 10)
             {
-                print("Test 4");
+                agm.TriggerChaChing();
                 station.cargo.cashMoney += 1;
                 station.gCoal += 10;
                 station.cargo.cargoCoal -= 10;
