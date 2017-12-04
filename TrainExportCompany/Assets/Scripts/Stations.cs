@@ -25,9 +25,8 @@ public class Stations : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Train" && inStation == true)
+        if (other.tag == "Train" && inStation)
         {
-            ui.ChangeUIState();
             inStation = false;
         }
     }

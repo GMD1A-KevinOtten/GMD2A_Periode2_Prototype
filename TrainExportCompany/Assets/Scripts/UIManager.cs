@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
         Station
     }
     public UIState uiState;
-    public AudioGameManager agm;
+    public Audio agm;
     //Station
     public Stations station;
     //Pannels
@@ -31,11 +31,11 @@ public class UIManager : MonoBehaviour {
     public Text carOre;
     public Text carGrain;
     public Text carCoal;
+    public Text money;
 
     void Start()
     {
         ChangeUIState();
-        agm = GameObject.FindWithTag("MainCamera").GetComponent<AudioGameManager>();
     }
 
     void Update()
@@ -80,6 +80,7 @@ public class UIManager : MonoBehaviour {
             pausePanel.SetActive(true);
             lastPanel = pausePanel;
             Time.timeScale = 0;
+            print("Pause");
         }
         else if (uiState == UIState.Train)
         {
@@ -130,6 +131,8 @@ public class UIManager : MonoBehaviour {
         carOre.text = "Ore: " + station.cargo.cargoOre;
         carGrain.text = "Grain: " + station.cargo.cargoGrain;
         carCoal.text = "Coal: " + station.cargo.cargoCoal;
+
+        money.text = "Money: " + station.cargo.cashMoney;
     }
 
     public void Buy(int GoodsType)
