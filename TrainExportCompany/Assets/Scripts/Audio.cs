@@ -9,6 +9,7 @@ public class Audio : MonoBehaviour {
     public List<AudioClip> music = new List<AudioClip>();
     public List<AudioClip> soundEffect = new List<AudioClip>();
     public int currentSong;
+    public UIManager ui;
 
     void Update()
     {
@@ -18,9 +19,9 @@ public class Audio : MonoBehaviour {
         }
     }
 
-    public void TriggerChaChing()
+    public void NextSoundEffect(int index)
     {
-        cameraSource.clip = soundEffect[0];
+        cameraSource.clip = soundEffect[index];
         cameraSource.Play();
     }
 
@@ -28,16 +29,37 @@ public class Audio : MonoBehaviour {
     {
         if(currentSong < music.Count)
         {
-            print("fuck");
+            print("Test 1");
             cameraMusicSource.clip = music[currentSong];
-            currentSong += 1;
+            ui.CurrentSongText();
             cameraMusicSource.Play();
+            currentSong += 1;
         }
-        else
+        else if(currentSong >= music.Count)
         {
-            print("Mooi");
+            print("Test 2");
             currentSong = 0;
             cameraMusicSource.clip = music[currentSong];
+            ui.CurrentSongText();
+            cameraMusicSource.Play();
+            currentSong += 1;
+        }
+    }
+
+    public void SycleSongBackwards()
+    {
+        if(currentSong != 0)
+        {
+            currentSong -= 1;
+            cameraMusicSource.clip = music[currentSong];
+            ui.CurrentSongText();
+            cameraMusicSource.Play();
+        }
+        else if(currentSong == 0)
+        {
+            currentSong = music.Count -1;
+            cameraMusicSource.clip = music[currentSong];
+            ui.CurrentSongText();
             cameraMusicSource.Play();
         }
     }
