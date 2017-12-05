@@ -52,7 +52,7 @@ public class RouteSwitch : MonoBehaviour {
 
     IEnumerator WaitToLoad()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         foreach (GameObject g in rightRails)
         {
             if(g.tag != "SwitchBig")
@@ -72,7 +72,7 @@ public class RouteSwitch : MonoBehaviour {
 
         foreach (GameObject g in leftRails)
         {
-            if (g.tag != "BigSwitch")
+            if (g.tag != "SwitchBig")
             {
                     foreach (GameObject q in g.GetComponent<Rails>().myWaypoints)
                 {
@@ -90,14 +90,18 @@ public class RouteSwitch : MonoBehaviour {
 
         foreach (GameObject g in backRails)
         {
-            if (g.tag != "BigSwitch")
+            if(g != null)
             {
-                    foreach (GameObject q in g.GetComponent<Rails>().myWaypoints)
+                if (g.tag != "SwitchBig")
                 {
-                    if (!backWaypoints.Contains(q))
+                        foreach (GameObject q in g.GetComponent<Rails>().myWaypoints)
                     {
-                        backWaypoints.Add(q);
+                        if (!backWaypoints.Contains(q))
+                        {
+                            backWaypoints.Add(q);
+                        }
                     }
+
                 }
 
             }

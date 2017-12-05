@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rails : MonoBehaviour {
     public List<GameObject> myWaypoints = new List<GameObject>();
-  
+    public bool reverseWaypoints;
 	// Use this for initialization
 	void Start () {
 		foreach(Transform t in transform)
@@ -14,6 +14,13 @@ public class Rails : MonoBehaviour {
                 myWaypoints.Add(t.gameObject);
             }
         }
+
+        if (reverseWaypoints)
+        {
+            myWaypoints.Reverse();
+        }
+
+
 	}
 	
 	// Update is called once per frame

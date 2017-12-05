@@ -59,19 +59,23 @@ public class WaypointsNew : MonoBehaviour {
                 if(nextWp == nextSwitch && nextSwitch != null)
                 {
                     RouteSwitch r = nextSwitch.GetComponent<RouteSwitch>();
-                    if (r.trainPassing && transform.tag == "AITrain")
+                    if(r != null)
                     {
-                        speedAtStop = 2;
-                        GetComponent<Train>().speed = 0;
-                    }
-                    else if (!r.trainPassing && transform.tag == "AITrain" && GetComponent<Train>().speed <= 0 )
-                    {
-                        if (!waiting)
+                        if (r.trainPassing && transform.tag == "AITrain")
                         {
-                            StartCoroutine(Wait());
-                            waiting = true;
+                            speedAtStop = 2;
+                            GetComponent<Train>().speed = 0;
                         }
+                        else if (!r.trainPassing && transform.tag == "AITrain" && GetComponent<Train>().speed <= 0 )
+                        {
+                            if (!waiting)
+                            {
+                                StartCoroutine(Wait());
+                                waiting = true;
+                            }
                        
+                        }
+
                     }
                     if (r != null)
                     {
