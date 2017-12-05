@@ -251,8 +251,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4719667887167618}
   - component: {fileID: 95573670232788660}
-  - component: {fileID: 64268189518104974}
   - component: {fileID: 114580473242782842}
+  - component: {fileID: 65681236572167242}
+  - component: {fileID: 54148779854439890}
   m_Layer: 0
   m_Name: Train rails small corner
   m_TagString: Rails
@@ -628,7 +629,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547244427488368}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000026226041}
-  m_LocalPosition: {x: 11.768, y: -0.03493, z: 47.6}
+  m_LocalPosition: {x: 260.15698, y: 25.8254, z: 326.5882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4510080210262484}
@@ -1717,20 +1718,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383010704816172}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64268189518104974
-MeshCollider:
+--- !u!54 &54148779854439890
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547244427488368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!65 &65021776239912414
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1899,6 +1901,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65681236572167242
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547244427488368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.693737, y: 0.556324, z: 29.111454}
+  m_Center: {x: 13.596096, y: -0.11499977, z: -13.39357}
 --- !u!65 &65718004175477604
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1992,3 +2006,4 @@ MonoBehaviour:
   left: 0
   right: 0
   back: 0
+  connectedSwitch: {fileID: 0}
