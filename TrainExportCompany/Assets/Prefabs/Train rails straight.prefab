@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 33171825613074838}
   - component: {fileID: 23780410778605258}
   - component: {fileID: 95665725935784964}
+  - component: {fileID: 64876154171076598}
+  - component: {fileID: 114411664780618466}
   m_Layer: 0
   m_Name: Train rails straight
-  m_TagString: Untagged
+  m_TagString: Rails
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +231,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918371635368600}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &64876154171076598
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828194520347196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: fb27c0cff73b3884386d64fa860e4a3c, type: 3}
 --- !u!65 &65024661943621918
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -270,3 +286,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114411664780618466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828194520347196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e413ca0f821ee7c49a1b22604ed9d922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighbours: []

@@ -36,9 +36,47 @@ public class RouteSwitch : MonoBehaviour {
 
     }
 
-    void UpdateText()
+    void OnCOllisionEnter(Collision col)
     {
-   
+        if(col.transform.tag == "Rails")
+        {
+            Rails rail = col.transform.GetComponent<Rails>();
+
+            if (rail.left)
+            {
+                foreach(GameObject g in rail.myWaypoints)
+                {
+                    if (!leftWaypoints.Contains(g))
+                    {
+                        leftWaypoints.Add(g);
+                    }
+                    
+                }
+                
+            }
+            else if (rail.right)
+            {
+                foreach (GameObject g in rail.myWaypoints)
+                {
+                    if (!rightWaypoints.Contains(g))
+                    {
+                        rightWaypoints.Add(g);
+                    }
+
+                }
+            }
+            if (rail.back)
+            {
+                foreach (GameObject g in rail.myWaypoints)
+                {
+                    if (!backWaypoints.Contains(g))
+                    {
+                        backWaypoints.Add(g);
+                    }
+
+                }
+            }
+        }
     }
 
     void OnTriggerStay(Collider other)

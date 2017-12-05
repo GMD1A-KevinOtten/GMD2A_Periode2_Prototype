@@ -11,6 +11,10 @@ TagManager:
   - AITrain
   - PlayerCart
   - AICart
+  - Rails
+  - SwitchBig
+  - Waypoint
+  - Switch
   layers:
   - Default
   - TransparentFX
