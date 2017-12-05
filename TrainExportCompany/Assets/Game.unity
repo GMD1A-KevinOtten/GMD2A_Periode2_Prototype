@@ -3851,7 +3851,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -10210,6 +10210,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 45c5f47677a69d24d97dca015f0b9bde, type: 3}
   - {fileID: 8300000, guid: f7c0efe0a0de63f4f8efa848b29c3f44, type: 3}
   - {fileID: 8300000, guid: 9045e92d0b65280449e79de7675ad48e, type: 3}
+  - {fileID: 8300000, guid: 539cf812c0fd2d4498339766f58c3033, type: 3}
   soundEffect:
   - {fileID: 8300000, guid: ffbb3ca61c6bf5b4093e92042421dfed, type: 3}
   currentSong: 0
@@ -10310,7 +10311,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
