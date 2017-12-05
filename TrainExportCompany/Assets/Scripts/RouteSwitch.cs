@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class RouteSwitch : MonoBehaviour {
 
+    public List<GameObject> rightRails = new List<GameObject>();
+    public List<GameObject> leftRails = new List<GameObject>();
+    public List<GameObject> backRails = new List<GameObject>();
+
     public List<GameObject> rightWaypoints = new List<GameObject>();
     public List<GameObject> leftWaypoints = new List<GameObject>();
     public List<GameObject> backWaypoints = new List<GameObject>();
+
+    public List<GameObject> nextSwitches = new List<GameObject>();
 
     public string lockedDir;
     public bool goLeft;
@@ -19,6 +25,14 @@ public class RouteSwitch : MonoBehaviour {
     public bool trainPassing;
 
     void Start () {
+
+        StartCoroutine(WaitToLoad());
+
+
+
+
+
+
         dirText = GetComponentInChildren<TextMesh>();
         if (goRight)
         {
@@ -36,48 +50,63 @@ public class RouteSwitch : MonoBehaviour {
 
     }
 
-    void OnCOllisionEnter(Collision col)
+    IEnumerator WaitToLoad()
     {
-        if(col.transform.tag == "Rails")
+        yield return new WaitForSeconds(3);
+        foreach (GameObject g in rightRails)
         {
-            Rails rail = col.transform.GetComponent<Rails>();
-
-            if (rail.left)
+            if(g.tag != "SwitchBig")
             {
-                foreach(GameObject g in rail.myWaypoints)
+                foreach (GameObject q in g.GetComponent<Rails>().myWaypoints)
                 {
-                    if (!leftWaypoints.Contains(g))
+                    if (!rightWaypoints.Contains(q))
                     {
-                        leftWaypoints.Add(g);
+                        rightWaypoints.Add(q);
                     }
-                    
                 }
-                
-            }
-            else if (rail.right)
-            {
-                foreach (GameObject g in rail.myWaypoints)
-                {
-                    if (!rightWaypoints.Contains(g))
-                    {
-                        rightWaypoints.Add(g);
-                    }
 
-                }
-            }
-            if (rail.back)
-            {
-                foreach (GameObject g in rail.myWaypoints)
-                {
-                    if (!backWaypoints.Contains(g))
-                    {
-                        backWaypoints.Add(g);
-                    }
-
-                }
             }
         }
+        //Switches 0 = links 1 = rechts 2 = back
+        rightWaypoints.Add(nextSwitches[1]);
+
+        foreach (GameObject g in leftRails)
+        {
+            if (g.tag != "BigSwitch")
+            {
+                    foreach (GameObject q in g.GetComponent<Rails>().myWaypoints)
+                {
+                    if (!leftWaypoints.Contains(q))
+                    {
+                        leftWaypoints.Add(q);
+                    }
+                }
+
+            }
+
+        }
+
+        leftWaypoints.Add(nextSwitches[0]);
+
+        foreach (GameObject g in backRails)
+        {
+            if (g.tag != "BigSwitch")
+            {
+                    foreach (GameObject q in g.GetComponent<Rails>().myWaypoints)
+                {
+                    if (!backWaypoints.Contains(q))
+                    {
+                        backWaypoints.Add(q);
+                    }
+                }
+
+            }
+
+        }
+
+        backWaypoints.Add(nextSwitches[0]);
     }
+
 
     void OnTriggerStay(Collider other)
     {
