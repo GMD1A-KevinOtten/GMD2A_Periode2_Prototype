@@ -54,40 +54,7 @@ public class RouteSwitch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //UpdateText();
-
-        if(cameFromBack && goLeft)
-        {
-            if (backWLReversed)
-            {
-                backWaypointsLeft.Reverse();
-                backWLReversed = false;
-            }
-            foreach (GameObject g in backWaypointsLeft)
-            {
-                if (!tren.wp.Contains(g))
-                {
-                    tren.wp.Add(g);
-                }
-             
-            }
-        }
-        else if (cameFromBack && goRight)
-        {
-            if (backWRReversed)
-            {
-                backWaypointsLRight.Reverse();
-                backWRReversed = false;
-            }
-            foreach (GameObject g in backWaypointsLRight)
-            {
-                if (!tren.wp.Contains(g))
-                {
-                    tren.wp.Add(g);
-                }
-
-            }
-        }
+       
 
     }
 
@@ -157,7 +124,7 @@ public class RouteSwitch : MonoBehaviour {
 
         }
 
-        backWaypoints.Add(nextSwitches[0]);
+        backWaypoints.Add(nextSwitches[2]);
     }
 
 
@@ -291,26 +258,17 @@ public class RouteSwitch : MonoBehaviour {
                 goBack = false;
                 lockedDir = "Back";
             }
-            else if (wpTrainCameFrom == rightRails[0].GetComponent<Rails>().myWaypoints[0] && lockedDir != "Right" && !goLeft)
+            else if (wpTrainCameFrom == rightRails[0].GetComponent<Rails>().myWaypoints[1] && lockedDir != "Right" && !goLeft)
             {
+                //Figure out reversing
+                tren.wp.Remove(gameObject);
                 backWaypointsLRight.Reverse();
-                backWRReversed = true;
-                foreach (GameObject g in tren.wp)
+                foreach(GameObject g in backWaypointsLRight)
                 {
-                    tren.wp.Remove(g);
+                    tren.wp.Add(g);
                 }
-                foreach (GameObject g in backWaypointsLRight)
-                {
-                    if (!tren.wp.Contains(g))
-                    {
-                        tren.wp.Add(g);
-                    }
-                    
-                }
-                if (!tren.wp.Contains(gameObject))
-                {
-                    tren.wp.Add(gameObject);
-                }
+                tren.nextWp = tren.wp[0];
+                tren.wp.Add(gameObject);
               
                 tren.SetNextSwitch();
                 goBack = true;
@@ -322,16 +280,16 @@ public class RouteSwitch : MonoBehaviour {
             else if (wpTrainCameFrom == leftWaypoints[0] && lockedDir != "Left" && !goBack)
             {
                 //Might need to play around with these bools
-                backWaypointsLeft.Reverse();
-                backWLReversed = true;
-                foreach (GameObject g in backWaypointsLeft)
-                {
-                    if (!tren.wp.Contains(g))
-                    {
-                        tren.wp.Add(g);
-                    }
+                //backWaypointsLeft.Reverse();
+                //backWLReversed = true;
+                //foreach (GameObject g in backWaypointsLeft)
+                //{
+                //    if (!tren.wp.Contains(g))
+                //    {
+                //        tren.wp.Add(g);
+                //    }
                     
-                }
+                //}
                 goRight = false;
                 goBack = true;
                 dirText.text = "Back";

@@ -7,7 +7,7 @@ public class WaypointsNew : MonoBehaviour {
 
     public float speed;
 
-    private GameObject nextWp;
+    public GameObject nextWp;
     public GameObject nextSwitch;
 
     public float speedAtStop;
