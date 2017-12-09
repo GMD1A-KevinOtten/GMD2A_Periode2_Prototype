@@ -286,7 +286,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1891661080414202
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -420,12 +420,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891661080414202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.439, y: -0.13, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: -5.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4482407893918918}
-  m_RootOrder: 13
+  m_Father: {fileID: 4134502935488796}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4091032323258860
 Transform:
@@ -465,6 +465,7 @@ Transform:
   m_Children:
   - {fileID: 4482407893918918}
   - {fileID: 4977751388118338}
+  - {fileID: 4075814251571422}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -270, z: 0}
@@ -610,7 +611,6 @@ Transform:
   - {fileID: 4168470190728982}
   - {fileID: 4387296421577724}
   - {fileID: 4399907202379622}
-  - {fileID: 4075814251571422}
   m_Father: {fileID: 4134502935488796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -1561,6 +1561,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 0
+  nextWp: {fileID: 0}
   nextSwitch: {fileID: 0}
   speedAtStop: 0
 --- !u!114 &114805377177166032
@@ -1586,7 +1587,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1847920730843410}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -1646,7 +1647,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2

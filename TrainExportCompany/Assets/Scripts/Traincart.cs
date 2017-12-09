@@ -43,9 +43,9 @@ public class Traincart : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, nextWp.transform.position, train.speed  * Time.deltaTime);
 
             Vector3 targetDir = nextWp.transform.position - transform.position;
-            Vector3 lookDir = Vector3.RotateTowards(transform.forward, targetDir, train.speed * 6000, 0.0F);
+            Vector3 lookDir = Vector3.RotateTowards(transform.forward, targetDir, train.speed * 0.5F, 0.0F);
             Quaternion rot = Quaternion.LookRotation(lookDir);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rot, train.speed * 6000 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, train.speed * 0.5F * Time.deltaTime);
 
         }
     }
