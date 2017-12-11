@@ -20222,7 +20222,7 @@ Prefab:
     - target: {fileID: 114929196274825948, guid: f3d49f01ec98c3645bdf03b9f80bfd79,
         type: 2}
       propertyPath: leftRails.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114929196274825948, guid: f3d49f01ec98c3645bdf03b9f80bfd79,
         type: 2}
@@ -23456,6 +23456,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1111689623}
     m_Modifications:
+    - target: {fileID: 114929196274825948, guid: f3d49f01ec98c3645bdf03b9f80bfd79,
+        type: 2}
+      propertyPath: rightRails.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114929196274825948, guid: f3d49f01ec98c3645bdf03b9f80bfd79,
         type: 2}
       propertyPath: backWaypoints.Array.size

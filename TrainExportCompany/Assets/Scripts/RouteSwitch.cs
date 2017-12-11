@@ -43,18 +43,26 @@ public class RouteSwitch : MonoBehaviour {
 
         if(rightRails.Count > 0)
         {
-            if(rightRails[0].gameObject.tag == "SwitchBig")
+            if(rightRails[0] != null)
             {
-                rightRails.Remove(rightRails[0]);
+                if (rightRails[0].gameObject.tag == "SwitchBig")
+                {
+                    rightRails.Remove(rightRails[0]);
+                }
             }
+           
 
         }
         if(leftRails.Count > 0)
         {
-            if (leftRails[0].gameObject.tag == "SwitchBig" && leftRails.Count > 0)
+            if (leftRails[0] != null)
             {
-                leftRails.Remove(rightRails[0]);
+                if (leftRails[0].gameObject.tag == "SwitchBig" && leftRails.Count > 0)
+                {
+                    leftRails.Remove(rightRails[0]);
+                }
             }
+            
         }
        
 
