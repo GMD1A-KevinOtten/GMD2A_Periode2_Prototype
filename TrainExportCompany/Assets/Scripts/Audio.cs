@@ -29,7 +29,6 @@ public class Audio : MonoBehaviour {
     {
         if(currentSong < music.Count)
         {
-            print("Test 1");
             cameraMusicSource.clip = music[currentSong];
             ui.CurrentSongText();
             cameraMusicSource.Play();
@@ -37,7 +36,6 @@ public class Audio : MonoBehaviour {
         }
         else if(currentSong >= music.Count)
         {
-            print("Test 2");
             currentSong = 0;
             cameraMusicSource.clip = music[currentSong];
             ui.CurrentSongText();

@@ -40,7 +40,7 @@ public class Stations : MonoBehaviour {
 
     public int RandomStockGen()
     {
-        int randomStock = Random.Range(-5, 5) * 100;
+        int randomStock = Random.Range(-50, 50) * 10;
         return randomStock;
     }
 }
