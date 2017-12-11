@@ -32,14 +32,31 @@ public class RouteSwitch : MonoBehaviour {
     private bool backWLReversed;
     private bool backWRReversed;
 
+    private Rails r1;
+    private Rails r0;
+
+    private Rails l1;
+    private Rails l0;
     void Start () {
         tren = GameObject.FindGameObjectWithTag("Train").GetComponent<WaypointsNew>();
         StartCoroutine(WaitToLoad());
 
+        if(rightRails.Count > 0)
+        {
+            if(rightRails[0].gameObject.tag == "SwitchBig")
+            {
+                rightRails.Remove(rightRails[0]);
+            }
 
-
-
-
+        }
+        if(leftRails.Count > 0)
+        {
+            if (leftRails[0].gameObject.tag == "SwitchBig" && leftRails.Count > 0)
+            {
+                leftRails.Remove(rightRails[0]);
+            }
+        }
+       
 
         dirText = GetComponentInChildren<TextMesh>();
         if (goRight)
@@ -246,67 +263,95 @@ public class RouteSwitch : MonoBehaviour {
 
     public void CheckWaypointBeforeSwitch()
     {
-        if(wpTrainCameFrom != null)
+        if(rightRails.Count > 0)
+        {
+            r1 = rightRails[1].GetComponent<Rails>();
+            r0 = rightRails[0].GetComponent<Rails>();
+        }
+       
+        if(leftRails.Count > 0)
+        {
+
+            l1 = leftRails[1].GetComponent<Rails>();
+            l0 = leftRails[0].GetComponent<Rails>();
+        }
+
+        if (wpTrainCameFrom != null)
         {
             if (wpTrainCameFrom == backWaypoints[0] && lockedDir != "Back" && !goRight)
             {
-                cameFromBack = true;
+                if (wpTrainCameFrom != null)
+                {
+                    cameFromBack = true;
                 
-                goLeft = true;
-                goRight = false;
-                dirText.text = "Left";
-                goBack = false;
-                lockedDir = "Back";
+                    goLeft = true;
+                    goRight = false;
+                    dirText.text = "Left";
+                    goBack = false;
+                    lockedDir = "Back";
+
+                }
             }
-            else if (wpTrainCameFrom == rightRails[0].GetComponent<Rails>().myWaypoints[1] || wpTrainCameFrom == rightRails[0].GetComponent<Rails>().myWaypoints[0] && lockedDir != "Right" && !goLeft)
+            }
+
+           
+            else if (r1 != null && r0 != null && wpTrainCameFrom == rightRails[0].GetComponent<Rails>().myWaypoints[1] || wpTrainCameFrom == rightRails[0].GetComponent<Rails>().myWaypoints[0] && lockedDir != "Right" && !goLeft)
             {
-                //Figure out reversing
-                tren.wp.Remove(gameObject);
-                if (!backWRReversed)
+                if (wpTrainCameFrom != null)
                 {
-                    backWaypointsLRight.Reverse();
-                    backWRReversed = true;
-                }
+                    //Figure out reversing
+                    tren.wp.Remove(gameObject);
+                    if (!backWRReversed)
+                    {
+                        backWaypointsLRight.Reverse();
+                        backWRReversed = true;
+                    }
                 
-                foreach(GameObject g in backWaypointsLRight)
-                {
-                    tren.wp.Add(g);
-                }
-                tren.nextWp = tren.wp[0];
-                tren.wp.Add(gameObject);
+                    foreach(GameObject g in backWaypointsLRight)
+                    {
+                        tren.wp.Add(g);
+                    }
+                    tren.nextWp = tren.wp[0];
+                    tren.wp.Add(gameObject);
               
-                tren.SetNextSwitch();
-                goBack = true;
-                goLeft = false;
-                dirText.text = "Back";
-                goRight = false;
-                lockedDir = "Right";
+                    tren.SetNextSwitch();
+                    goBack = true;
+                    goLeft = false;
+                    dirText.text = "Back";
+                    goRight = false;
+                    lockedDir = "Right";
+
+                }
             }
-            else if (wpTrainCameFrom == leftRails[0].GetComponent<Rails>().myWaypoints[1] || wpTrainCameFrom == leftRails[0].GetComponent<Rails>().myWaypoints[0] && lockedDir != "Left" && !goBack)
+            else if (l1 != null && l0!= null && wpTrainCameFrom == leftRails[0].GetComponent<Rails>().myWaypoints[1] || wpTrainCameFrom == leftRails[0].GetComponent<Rails>().myWaypoints[0] && lockedDir != "Left" && !goBack)
             {
-
-                tren.wp.Remove(gameObject);
-                if (!backWLReversed)
+                if (wpTrainCameFrom != null)
                 {
-                    backWaypointsLeft.Reverse();
-                    backWLReversed = true;
+                        tren.wp.Remove(gameObject);
+                    if (!backWLReversed)
+                    {
+                        backWaypointsLeft.Reverse();
+                        backWLReversed = true;
+                    }
+
+                    foreach (GameObject g in backWaypointsLeft)
+                    {
+                        tren.wp.Add(g);
+                    }
+                    tren.nextWp = tren.wp[0];
+                    tren.wp.Add(gameObject);
+
+                    tren.SetNextSwitch();
+
+                    goRight = false;
+                    goBack = true;
+                    dirText.text = "Back";
+                    goLeft = false;
+                    lockedDir = "Left";
+
                 }
 
-                foreach (GameObject g in backWaypointsLeft)
-                {
-                    tren.wp.Add(g);
-                }
-                tren.nextWp = tren.wp[0];
-                tren.wp.Add(gameObject);
-
-                tren.SetNextSwitch();
-
-                goRight = false;
-                goBack = true;
-                dirText.text = "Back";
-                goLeft = false;
-                lockedDir = "Left";
             }
         }
     }
-    }
+  
