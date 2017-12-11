@@ -12,6 +12,13 @@ public class Stations : MonoBehaviour {
     public UIManager ui;
     public static bool inStation;
 
+    void Start()
+    {
+        gIron = RandomStockGen();
+        gOre = RandomStockGen();
+        gGrain = RandomStockGen();
+        gCoal = RandomStockGen();
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -31,4 +38,9 @@ public class Stations : MonoBehaviour {
         }
     }
 
+    public int RandomStockGen()
+    {
+        int randomStock = Random.Range(-5, 5) * 100;
+        return randomStock;
+    }
 }
