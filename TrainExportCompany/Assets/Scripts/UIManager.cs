@@ -32,6 +32,14 @@ public class UIManager : MonoBehaviour {
     public Text carGrain;
     public Text carCoal;
     public Text money;
+    public Text pBIron;
+    public Text pBOre;
+    public Text pBGrain;
+    public Text pBCoal;
+    public Text pSIron;
+    public Text pSOre;
+    public Text pSGrain;
+    public Text pSCoal;
     //TrainTexts
     public Text currentSong;
 
@@ -149,6 +157,16 @@ public class UIManager : MonoBehaviour {
         carCoal.text = "Coal: " + station.cargo.cargoCoal;
 
         money.text = "Money: " + station.cargo.cashMoney;
+
+        pBIron.text = "Price: " + UpdatePriceBuy(station.gIron);
+        pBOre.text = "Price: " + UpdatePriceBuy(station.gOre);
+        pBGrain.text = "Price: " + UpdatePriceBuy(station.gGrain);
+        pBCoal.text = "Price: " + UpdatePriceBuy(station.gCoal);
+
+        pSIron.text = "Price " + UpdatePriceSell(station.gIron);
+        pSOre.text = "Price " + UpdatePriceSell(station.gOre);
+        pSGrain.text = "Price " + UpdatePriceSell(station.gGrain);
+        pSCoal.text = "Price " + UpdatePriceSell(station.gCoal);
     }
 
     public void Buy(int GoodsType)
@@ -437,6 +455,42 @@ public class UIManager : MonoBehaviour {
                 StationMessage("There is no Demand or there is suplly for this recource");
             }
         }
+    }
+
+    public int UpdatePriceBuy(int goods)
+    {
+        int price = 0;
+        if(goods >= 100)
+        {
+            price = 5;
+        }
+        else if(goods >= 10)
+        {
+            price = 10;
+        }
+        return price;
+    }
+
+    public int UpdatePriceSell(int goods)
+    {
+        int price = 0;
+        if (goods <= -100)
+        {
+            price = 20;
+        }
+        else if (goods <= -50)
+        {
+            price = 10;
+        }
+        else if (goods <= 0)
+        {
+            price = 5;
+        }
+        else if (goods > 0)
+        {
+            price = 1;
+        }
+        return price;
     }
 
     public void StationMessage(string message)

@@ -8,7 +8,7 @@ public class Audio : MonoBehaviour {
     public AudioSource cameraMusicSource;
     public List<AudioClip> music = new List<AudioClip>();
     public List<AudioClip> soundEffect = new List<AudioClip>();
-    public int currentSong;
+    public int currentSong = -1;
     public UIManager ui;
 
     void Update()
@@ -27,20 +27,19 @@ public class Audio : MonoBehaviour {
 
     public void NextSong()
     {
-        if(currentSong < music.Count)
+        if(currentSong < music.Count -1)
         {
+            currentSong += 1;
             cameraMusicSource.clip = music[currentSong];
             ui.CurrentSongText();
             cameraMusicSource.Play();
-            currentSong += 1;
         }
-        else if(currentSong >= music.Count)
+        else if(currentSong >= music.Count -1)
         {
             currentSong = 0;
             cameraMusicSource.clip = music[currentSong];
             ui.CurrentSongText();
             cameraMusicSource.Play();
-            currentSong += 1;
         }
     }
 
